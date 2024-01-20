@@ -111,6 +111,8 @@ public key: gsgfB29uYjpuFTCjC1+vHr9M7++MHJcG6Eg4rtuTu34=
 private key: (hidden)
 listening port: 58208
 
+Reference: https://serverspace.io/pt/support/help/set-up-wireguard-vpn-server-on-ubuntu/
+
 peer: tsGQ8spwOQhpJb4BbhZtunLZEJCcPxUBIaQUpniQ+z4=
 endpoint: 82.213.236.27:61951
 allowed ips: 0.0.0.0/0
