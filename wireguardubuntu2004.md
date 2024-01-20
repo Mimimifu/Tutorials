@@ -1,5 +1,12 @@
 ### Como configurar WireGuard VPN Servidor em Ubuntu 20.04
 
+Dica importante no caso de configurar o servidor e não navegar as vezes é necessário reiniciar a estação 
+do cliente, e aguardar alguns horas !
+
+No meu caso especifico tinha iniciado com centos 7 e só consegui funcionalidade no ubuntu 20.04
+
+Entretanto o site do wireguard indica varios OS e como instalar verifiquei a solução mais simples foi a solução !
+
 ### Neste tutorial, veremos as etapas para configurar e configurar o WireGuard VPN servidor e client.
 
 ### WireGuard instalação
