@@ -66,6 +66,7 @@ ListenPort = 61951  # Previously, we opened this port to listen for incoming con
 ### Change "enp0s5" to the name of your network interface in the following two settings. This commands configures iptables for WireGuard.
 
 PostUp = iptables -A FORWARD -i wg0 -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE;ip6tables -A FORWARD -i wg0 -j ACCEPT; ip6tables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+
 PostDown = iptables -D FORWARD -i wg0 -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE;ip6tables -D FORWARD -i wg0 -j ACCEPT; ip6tables -t nat -D POSTROUTING -o eth0 -j MASQUERADE
 
 ### Configurations for the clients. You need to add a [Peer] section for each VPN client.
