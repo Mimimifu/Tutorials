@@ -28,6 +28,7 @@ sudo nano /etc/sysctl.conf
 ### Descomente a seguinte linha.
 
 net.ipv4.ip_forward=1
+
 net.ipv6.conf.all.forward=1
 
 ### Aplique as alterações.
