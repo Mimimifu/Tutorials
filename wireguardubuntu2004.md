@@ -19,40 +19,41 @@ sudo apt install wireguard
 
 ### Primeiro, você precisa permitir o tráfego UDP de entrada em alguma porta para o VPN conexão.
 
-sudo ufw allow 61951/udp
+> sudo ufw allow 61951/udp
 
 ### Permitir o redirecionamento de pacotes de rede no nível do kernel.
 
-sudo nano /etc/sysctl.conf
+> sudo nano /etc/sysctl.conf
 
 ### Descomente a seguinte linha.
 
-net.ipv4.ip_forward=1
+> net.ipv4.ip_forward=1
 
-net.ipv6.conf.all.forward=1
+> net.ipv6.conf.all.forward=1
 
 ### Aplique as alterações.
 
-sudo sysctl -p
+> sudo sysctl -p
 
 ### Criação de pares de chaves privadas e públicas
 
 ### Use este comando para gerar chaves e tornar uma privada acessível apenas ao usuário root por motivos de segurança.
 
-wg genkey | sudo tee /etc/wireguard/server_private.key | wg pubkey | sudo tee /etc/wireguard/server_public.key
+> wg genkey | sudo tee /etc/wireguard/server_private.key | wg pubkey | sudo tee /etc/wireguard/server_public.key
 
 ### Execute a mesma ação no climáquina ent para o client_private.key e client_public.key.
 
 ### Para ver os valores das chaves, use o comando 'cat', por exemplo:
 
-sudo cat /etc/wireguard/server_private.key
-cat /etc/wireguard/server_public.key
+> sudo cat /etc/wireguard/server_private.key
+
+> cat /etc/wireguard/server_public.key
 
 ### WireGuard configuração do servidor
 
 ### Criar o WireGuard arquivo de configuração.
 
-sudo nano /etc/wireguard/wg0.conf
+> sudo nano /etc/wireguard/wg0.conf
 
 ### Preencha-o com as seguintes linhas:
 
