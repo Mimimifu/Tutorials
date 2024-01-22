@@ -18,7 +18,7 @@ Depois disso, vamos descomentar net/ipv4/ip_forward=1.
 
 Se tivermos acesso ao usuário root, podemos habilitar o encaminhamento de pacotes em /etc/ufw/sysctl.conf executando:
 
-# echo 'net/ipv4/ip_forward=1' >> /etc/ufw/sysctl.conf
+echo 'net/ipv4/ip_forward=1' >> /etc/ufw/sysctl.conf
 
 Esse comando basicamente acrescenta a string de encaminhamento de pacotes não comentada ao arquivo /etc/ufw/sysctl.conf.
 
