@@ -8,6 +8,7 @@ utils
 
 [Encaminhamento de Portas com UFW](https://github.com/Mimimifu/Tutorials/blob/main/EncaminhamentoPortasUFW.md)
 
+[InterfacesPythonAutoGui](https://github.com/Mimimifu/Tutorials/blob/main/InterfacesPythonAutoGui.md)
 
 Image(Error Fix) Helps
 
