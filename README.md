@@ -8,9 +8,9 @@ utils
 
 [Encaminhamento de Portas com UFW](https://github.com/Mimimifu/Tutorials/blob/main/EncaminhamentoPortasUFW.md)
 
-[InterfacesPythonAutoGui](https://github.com/Mimimifu/Tutorials/blob/main/InterfacesPythonAutoGui.md)
+[Interfaces PythonAutoGui](https://github.com/Mimimifu/Tutorials/blob/main/InterfacesPythonAutoGui.md)
 
-[HospedandoSiteRedeOnion](https://github.com/Mimimifu/Tutorials/blob/main/HospedandoSiteRedeOnion.md)
+[Hospedando Site na Rede Onion](https://github.com/Mimimifu/Tutorials/blob/main/HospedandoSiteRedeOnion.md)
 
 Image(Error Fix) Helps
 
