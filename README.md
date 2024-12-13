@@ -1,6 +1,7 @@
 ## Tutorials
 
 utils
+[Melhor DNS](https://github.com/Mimimifu/Tutorials/blob/main/BestDNS.md)
 
 [Wireguard VPN on ubuntu 20.04](https://github.com/Mimimifu/Tutorials/blob/main/wireguardubuntu2004.md)
 
