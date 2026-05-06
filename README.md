@@ -14,6 +14,9 @@ utils
 
 [Hospedando Site na Rede Onion](https://github.com/Mimimifu/Tutorials/blob/main/HospedandoSiteRedeOnion.md)
 
+[Windows 11 Safe](https://github.com/Mimimifu/Tutorials/blob/main/Windows11InstalacaoComBackups.md)
+
 Image(Error Fix) Helps
 
 ![Help Boot Windows 8+](https://github.com/Mimimifu/Tutorials/blob/main/boot-sequence-thumb-expanded.png)
+
