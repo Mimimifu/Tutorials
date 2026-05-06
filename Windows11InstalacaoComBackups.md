@@ -144,7 +144,7 @@ Durante o **deploy da imagem ouro** (restauração do `.raw.xz` no NVMe), a part
 
 ### 2. Configurar o Windows (OOBE)
 
-- Após a restauração, ligue o PC e complete a OOBE (crie seu usuário principal – ex: `svlocal`, senha qualquer).  
+- Após a restauração, ligue o PC.
 - Use uma conta local (desconecte a internet para forçar a opção).
 
 ---
@@ -152,6 +152,17 @@ Durante o **deploy da imagem ouro** (restauração do `.raw.xz` no NVMe), a part
 ### 3. Criar a Conta de Resgate (`svadminlocal` / `safe`)
 
 Logado como `svlocal`, abra o **PowerShell como Administrador** (Win+X → Terminal (Admin)) e execute:
+
+```powershell
+manage-bde -off C:
+```
+Aguarde descriptografia da unidade se estiver criptografada ...
+
+```powershell
+manage-bde -status
+```
+
+Complete a OOBE (crie seu usuário principal – ex: `svlocal`, senha qualquer).  
 
 ```powershell
 net user svadminlocal 1234 /add
@@ -238,6 +249,26 @@ powercfg -h off
 
 - Use o **WinDirStat** (ou `compact.exe`) para verificar o espaço no `C:`.  
   - **Esperado:** Menos de 35 GB ocupados, pelo menos 25 GB livres.
+
+- Registro que vai mudar os arquivos dos instaladores para nova partição !
+ 
+auto_reg.reg
+
+```reg
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion]
+"ProgramFilesDir"="G:\\Programas\\Program Files"
+"ProgramFilesDir (x86)"="G:\\Programas\\Program Files (x86)"
+"ProgramW6432Dir"="G:\\Programas\\Program Files"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion]
+"ProgramFilesDir"="G:\\Programas\\Program Files (x86)"
+"ProgramFilesDir (x86)"="G:\\Programas\\Program Files (x86)"
+"ProgramW6432Dir"="G:\\Programas\\Program Files"
+```
+
+
 
 - **Delete o perfil `svadminlocal`?** Não – mantenha como contingência. Use apenas quando necessário.
 
