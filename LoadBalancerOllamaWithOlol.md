@@ -1,5 +1,5 @@
 
-## 📋 Arquitetura do Cluster
+## 📋 Arquitetura do LoadBalancer
 
 ```
 Máquina 1 (192.168.1.100)          Máquina 2 (192.168.1.101)
@@ -23,7 +23,7 @@ Crie um arquivo chamado `install_ollama_cluster.sh`:
 ```bash
 #!/bin/bash
 
-# Script de instalação do Cluster Ollama com 2 máquinas
+# Script de instalação do LoadBalancer Ollama com 2 máquinas
 # Autor: Seu nome
 # Uso: ./install_ollama_cluster.sh
 
