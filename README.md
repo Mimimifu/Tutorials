@@ -16,6 +16,10 @@ utils
 
 [Windows 11 Safe](https://github.com/Mimimifu/Tutorials/blob/main/Windows11InstalacaoComBackups.md)
 
+[LLMs Cluster Balanceamento de carga](https://github.com/Mimimifu/Tutorials/blob/main/LoadBalancerOllamaWithOlol.md)
+
+[24/7 Rerun Na Twitch usando um VPS e FFmpeg](https://github.com/Mimimifu/Tutorials/blob/main/RestreamTwitch.md)
+
 Image(Error Fix) Helps
 
 ![Help Boot Windows 8+](https://github.com/Mimimifu/Tutorials/blob/main/boot-sequence-thumb-expanded.png)
