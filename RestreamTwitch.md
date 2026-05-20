@@ -320,14 +320,100 @@ Se você encontrar problemas, verifique:
 
 **Agora é só executar e curtir o rerun 24/7!** 🚀
 
+
+
+
+Após o comando `mkdir -p /home/videos`, você pode incluir uma observação sobre permissões, que é uma dúvida comum de quem está começando:
+
+```markdown
+> **Importante:** se o FFmpeg reclamar de permissão de acesso ao arquivo, execute:
+> ```bash
+> sudo chmod 755 /home/videos
+> ```
+```
+
+#### 4. Verificação da Stream Key
+Na seção "04 - Obtendo a Stream Key da Twitch", vale um alerta extra, porque é o erro mais comum de quem está começando:
+
+```markdown
+> **Atenção:** se o stream não funcionar, verifique se você copiou a **Primary Stream Key** e não a **Preview Stream Key**. A primária é a que funciona para transmissões ao vivo.
+```
+
+#### 5. Comando `ffmpeg` Mais Seguro com `-shortest`
+Você pode adicionar uma dica sobre o parâmetro `-shortest`, que resolve um problema chato: se um vídeo tiver uma faixa de áudio mais longa que o vídeo, o FFmpeg pode "travar" esperando o áudio terminar.
+
+```bash
+ffmpeg -re -stream_loop -1 -i "/home/videos/seu_video.mp4" -c copy -shortest -f flv rtmp://live.twitch.tv/app/SUA_STREAM_KEY
+```
+
+#### 6. Solução de Problemas Comuns
+Adicionar uma seção de "Solução de Problemas" é sempre útil. Um erro clássico é:
+
+```markdown
+### 🔧 Se o stream travar ou não iniciar...
+
+**Problema:** O stream inicia, mas fica travado ou cai depois de alguns segundos.
+**Causa provável:** O servidor VPS pode ter recursos limitados (CPU/RAM).
+**Solução:** Você pode tentar reduzir a resolução do vídeo ou usar um codec mais leve com o comando:
+```bash
+ffmpeg -re -stream_loop -1 -i "/home/videos/seu_video.mp4" -c:v libx264 -preset ultrafast -b:v 2000k -c:a aac -b:a 128k -f flv rtmp://live.twitch.tv/app/SUA_STREAM_KEY
+```
+> **Explicação:** Esse comando força o FFmpeg a recodificar o vídeo em um formato mais leve, o que pode ajudar em servidores modestos.
 ```
 
 ---
 
-### Como usar:
+### 🧩 Informações Complementares
 
-1. **Crie uma pasta no seu repositório** no GitHub, por exemplo `Tutorials`.
-2. Dentro dela, crie um arquivo chamado `README.md` e cole todo o conteúdo acima.
-3. (Opcional) Se quiser separar em vários arquivos, você pode quebrar cada seção em arquivos como `01-contratando-vps.md`, `02-conectando-ssh.md`, etc., e usar links no `README.md` apontando para eles. O tutorial acima foi escrito para ser **autossuficiente em um único arquivo**, facilitando a leitura.
+#### 🐳 Instruções Mais Detalhadas para a Solução Docker
+A seção "07 - Solução Alternativa: Usando Docker" está um pouco resumida. Para deixar mais claro, sugiro:
 
-Pronto! Agora é só enviar o link do GitHub para sua conhecida. Ela terá um material completo, didático e em português. 🚀
+```markdown
+### 🐳 Usando Docker (Passo a Passo Simplificado)
+
+Se você prefere uma abordagem ainda mais automatizada, existe um contêiner Docker que já faz tudo isso. O repositório `simeononsecurity/docker-ffmpeg-mp4-folder` é uma ótima opção.
+
+1. **Instale o Docker no servidor:**
+   ```bash
+   sudo apt update
+   sudo apt install docker.io -y
+   sudo systemctl start docker
+   sudo systemctl enable docker
+   ```
+
+2. **Clone o repositório e acesse a pasta:**
+   ```bash
+   git clone https://github.com/simeononsecurity/docker-ffmpeg-mp4-folder.git
+   cd docker-ffmpeg-mp4-folder
+   ```
+
+3. **Construa a imagem Docker:**
+   ```bash
+   docker build -t mp4-streamer .
+   ```
+
+4. **Execute o contêiner com loop infinito:**
+   ```bash
+   docker run -td --restart unless-stopped \
+     -v /home/videos:/videos \
+     -e TWITCH_STREAM_KEY=SUA_STREAM_KEY \
+     -e LOOP_INDEFINITELY=true \
+     mp4-streamer
+   ```
+
+   - `-v /home/videos:/videos`: conecta a pasta local com os vídeos à pasta interna do contêiner.
+   - `-e LOOP_INDEFINITELY=true`: o parâmetro mágico que faz o loop infinito.
+
+> **Nota:** Você pode transmitir para várias plataformas ao mesmo tempo adicionando as variáveis `YOUTUBE_STREAM_KEY`, `KICK_STREAM_URL` e `KICK_STREAM_KEY`.
+```
+
+#### ☁️ Sugestões Adicionais de Provedores VPS
+Na seção "01 - Contratando o VPS", vale a pena mencionar a **Hostinger** e a **SpeedCloud** como alternativas, já que são opções populares no Brasil:
+
+```markdown
+- **Hostinger**: Planos gerenciados, ótimo custo-benefício e suporte em português. Oferecem descontos agressivos para novos clientes.
+- **SpeedCloud**: Conhecida pela performance com NVMe e rede de 10 Gbps. Planos a partir de valores competitivos.
+```
+
+
+
