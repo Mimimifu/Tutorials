@@ -72,6 +72,88 @@ Existem várias opções no mercado brasileiro com preços acessíveis. Escolha 
 
 ---
 
+## 01.5 - VPS Gratuitos em São Paulo (Por Tempo Limitado)
+
+> **Nota:** Esta seção é um complemento opcional para quem quer testar o projeto antes de investir em um VPS pago.
+
+Existem algumas opções de VPS gratuitos ou com créditos iniciais com datacenter em **São Paulo (GRU)**. Abaixo listo as principais:
+
+### ☁️ Oracle Cloud Free Tier (Recomendado)
+
+O **Oracle Cloud Infrastructure (OCI)** oferece um dos melhores Free Tiers do mercado, com recursos que **nunca expiram**.
+
+- **Região São Paulo:** `sa-saopaulo-1` (disponível para Free Tier)[reference:0]
+- **Recursos Always Free (não expiram):**
+  - **2 instâncias AMD** (1/8 OCPU e 1 GB de RAM cada)
+  - **4 instâncias ARM** (até 4 OCPUs e 24 GB de RAM no total, para distribuir entre elas)
+  - **10 TB de transferência de dados por mês**
+  - **200 GB de armazenamento em disco**
+- **Duração:** Forever (enquanto mantiver uso mínimo)
+- **Requisitos:** Cartão de crédito (para verificação, não é cobrado)
+
+> **⚠️ Atenção:** A Oracle pode revogar instâncias com uso muito baixo (CPU/RAM ociosas). Mantenha seu stream rodando com uso ativo.[reference:1]
+
+### 🎓 Google Cloud Platform (GCP) - $300 crédito
+
+O Google Cloud oferece créditos generosos para novos usuários.
+
+- **Crédito inicial:** **US$300** válidos por **90 dias**
+- **Após os 90 dias:** Instância **e2-micro** (1 vCPU, 1 GB RAM) gratuita por mês (limitada)
+- **Região São Paulo:** Disponível (`southamerica-east1`)
+- **Requisitos:** Cartão de crédito para verificação
+
+### ☁️ Microsoft Azure - $200 crédito
+
+A Microsoft também oferece créditos para experimentar seus serviços.
+
+- **Crédito inicial:** **US$200** válidos por **30 dias**
+- **Após 30 dias:** 12 meses de serviços gratuitos limitados (B1s, 1 vCPU, 1 GB RAM)[reference:2]
+- **Região São Paulo:** Disponível (`Brazil South`)
+- **Requisitos:** Cartão de crédito para verificação
+
+### 🚀 DigitalOcean - $200 crédito
+
+Provedor focado em desenvolvedores, interface simples e intuitiva.
+
+- **Crédito inicial:** **US$200** válidos por **60 dias**[reference:3]
+- **Região São Paulo:** Disponível (datacenter `GRU`)[reference:4]
+- **Requisitos:** Cartão de crédito
+
+### ⚡ Linode (Akamai) - US$100 crédito
+
+- **Crédito inicial:** **US$100** válidos por **60 dias**[reference:5]
+- **Região São Paulo:** Disponível[reference:6]
+- **Requisitos:** Cartão de crédito
+
+### ⚡ Vultr - Crédito variável
+
+O Vultr oferece **testes gratuitos de 30 dias** e campanhas promocionais com créditos que podem chegar a **US$300**[reference:7][reference:8].
+- **Região São Paulo:** Disponível[reference:9]
+
+> 💡 **Dica:** Fique de olho em sites como `Diolinux` e fóruns de promoções, pois frequentemente surgem links promocionais com créditos extras.
+
+---
+
+## 🚨 ⚠️ ALERTA IMPORTANTE SOBRE TRÁFEGO DE REDE ⚠️ 🚨
+
+**Antes de contratar QUALQUER VPS (gratuito ou pago), atenção:**
+
+- Uma stream contínua de **48 horas consome muito tráfego de rede** — na faixa de **centenas de gigabytes** dependendo da resolução/bitrate.
+- **Planos gratuitos e muitos planos pagos básicos possuem franquia de tráfego mensal** (exemplo: 1 TB, 2 TB, ou poucos GB). Se você exceder, pode:
+  - Ter a VPS **suspensa** (em planos gratuitos)
+  - Pagar **taxas extras caras** por excedente
+  - Ter a **velocidade drasticamente reduzida**
+
+### ✅ Recomendação:
+
+- **Para testes e primeiros passos:** Use um plano gratuito. Se a stream cair após alguns dias, você já sabe o motivo.
+- **Para produção (rodar 24/7 por meses):** Contrate um **VPS pago com TRÁFEGO ILIMITADO**, como os mencionados na seção anterior do tutorial (KingHost, ExpressVPS, etc.). O custo compensa a tranquilidade.
+
+> 💡 **Dica extra:** Monitore o consumo de rede do seu servidor periodicamente com comandos como `vnstat` ou `nethogs` para não ser pego de surpresa.
+
+---
+**Créditos:** DeepSeek a pedido de lbzconsultoria (Mimimifu) para o Tutorial de Rerun na Twitch.
+
 ## 02 - Conectando ao Servidor via SSH
 
 Após contratar o VPS, você receberá um e-mail com:
