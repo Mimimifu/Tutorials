@@ -3,7 +3,7 @@
 
 ### `README.md` (Arquivo Principal)
 
-```markdown
+
 # Tutorial: Como Configurar um Rerun 24/7 na Twitch Usando um VPS e FFmpeg
 
 **Autor:** DeepSeek  
@@ -359,7 +359,7 @@ Adicionar uma seção de "Solução de Problemas" é sempre útil. Um erro clás
 ffmpeg -re -stream_loop -1 -i "/home/videos/seu_video.mp4" -c:v libx264 -preset ultrafast -b:v 2000k -c:a aac -b:a 128k -f flv rtmp://live.twitch.tv/app/SUA_STREAM_KEY
 ```
 > **Explicação:** Esse comando força o FFmpeg a recodificar o vídeo em um formato mais leve, o que pode ajudar em servidores modestos.
-```
+
 
 ---
 
@@ -368,7 +368,7 @@ ffmpeg -re -stream_loop -1 -i "/home/videos/seu_video.mp4" -c:v libx264 -preset 
 #### 🐳 Instruções Mais Detalhadas para a Solução Docker
 A seção "07 - Solução Alternativa: Usando Docker" está um pouco resumida. Para deixar mais claro, sugiro:
 
-```markdown
+
 ### 🐳 Usando Docker (Passo a Passo Simplificado)
 
 Se você prefere uma abordagem ainda mais automatizada, existe um contêiner Docker que já faz tudo isso. O repositório `simeononsecurity/docker-ffmpeg-mp4-folder` é uma ótima opção.
@@ -405,15 +405,15 @@ Se você prefere uma abordagem ainda mais automatizada, existe um contêiner Doc
    - `-e LOOP_INDEFINITELY=true`: o parâmetro mágico que faz o loop infinito.
 
 > **Nota:** Você pode transmitir para várias plataformas ao mesmo tempo adicionando as variáveis `YOUTUBE_STREAM_KEY`, `KICK_STREAM_URL` e `KICK_STREAM_KEY`.
-```
+
 
 #### ☁️ Sugestões Adicionais de Provedores VPS
 Na seção "01 - Contratando o VPS", vale a pena mencionar a **Hostinger** e a **SpeedCloud** como alternativas, já que são opções populares no Brasil:
 
-```markdown
+
 - **Hostinger**: Planos gerenciados, ótimo custo-benefício e suporte em português. Oferecem descontos agressivos para novos clientes.
 - **SpeedCloud**: Conhecida pela performance com NVMe e rede de 10 Gbps. Planos a partir de valores competitivos.
-```
+
 
 
 
